@@ -13,22 +13,22 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-import type { FaceFeature } from './FaceDetector';
+// import type { FaceFeature } from './FaceDetector';
 
-const Rationale = PropTypes.shape({
-  title: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  buttonPositive: PropTypes.string,
-  buttonNegative: PropTypes.string,
-  buttonNeutral: PropTypes.string,
-});
+// const Rationale = PropTypes.shape({
+//   title: PropTypes.string.isRequired,
+//   message: PropTypes.string.isRequired,
+//   buttonPositive: PropTypes.string,
+//   buttonNegative: PropTypes.string,
+//   buttonNeutral: PropTypes.string,
+// });
 
 const requestPermissions = async (
-  captureAudio: boolean,
-  CameraManager: any,
-  androidCameraPermissionOptions: Rationale | null,
-  androidRecordAudioPermissionOptions: Rationale | null,
-): Promise<{ hasCameraPermissions: boolean, hasRecordAudioPermissions: boolean }> => {
+  captureAudio,
+  CameraManager,
+  androidCameraPermissionOptions,
+  androidRecordAudioPermissionOptions,
+) => {
   let hasCameraPermissions = false;
   let hasRecordAudioPermissions = false;
 
@@ -93,235 +93,235 @@ const styles = StyleSheet.create({
   },
 });
 
-type Orientation = 'auto' | 'landscapeLeft' | 'landscapeRight' | 'portrait' | 'portraitUpsideDown';
-type OrientationNumber = 1 | 2 | 3 | 4;
+// type Orientation = 'auto' | 'landscapeLeft' | 'landscapeRight' | 'portrait' | 'portraitUpsideDown';
+// type OrientationNumber = 1 | 2 | 3 | 4;
 
-type PictureOptions = {
-  quality?: number,
-  orientation?: Orientation | OrientationNumber,
-  base64?: boolean,
-  mirrorImage?: boolean,
-  exif?: boolean,
-  writeExif?: boolean | { [name: string]: any },
-  width?: number,
-  fixOrientation?: boolean,
-  forceUpOrientation?: boolean,
-  pauseAfterCapture?: boolean,
-};
+// type PictureOptions = {
+//   quality?: number,
+//   orientation?: Orientation | OrientationNumber,
+//   base64?: boolean,
+//   mirrorImage?: boolean,
+//   exif?: boolean,
+//   writeExif?: boolean | { [name: string]: any },
+//   width?: number,
+//   fixOrientation?: boolean,
+//   forceUpOrientation?: boolean,
+//   pauseAfterCapture?: boolean,
+// };
 
-type TrackedFaceFeature = FaceFeature & {
-  faceID?: number,
-};
+// type TrackedFaceFeature = FaceFeature & {
+//   faceID?: number,
+// };
 
-type TrackedTextFeature = {
-  type: string,
-  bounds: {
-    size: {
-      width: number,
-      height: number,
-    },
-    origin: {
-      x: number,
-      y: number,
-    },
-  },
-  value: string,
-  components: Array<TrackedTextFeature>,
-};
+// type TrackedTextFeature = {
+//   type: string,
+//   bounds: {
+//     size: {
+//       width: number,
+//       height: number,
+//     },
+//     origin: {
+//       x: number,
+//       y: number,
+//     },
+//   },
+//   value: string,
+//   components: Array<TrackedTextFeature>,
+// };
 
-type TrackedBarcodeFeature = {
-  bounds: {
-    size: {
-      width: number,
-      height: number,
-    },
-    origin: {
-      x: number,
-      y: number,
-    },
-  },
-  data: string,
-  dataRaw: string,
-  type: BarcodeType,
-  format?: string,
-  addresses?: {
-    addressesType?: 'UNKNOWN' | 'Work' | 'Home',
-    addressLines?: string[],
-  }[],
-  emails?: Email[],
-  phones?: Phone[],
-  urls: ?(string[]),
-  name?: {
-    firstName?: string,
-    lastName?: string,
-    middleName?: string,
-    prefix?: string,
-    pronounciation?: string,
-    suffix?: string,
-    formattedName?: string,
-  },
-  phone?: Phone,
-  organization?: string,
-  latitude?: number,
-  longitude?: number,
-  ssid?: string,
-  password?: string,
-  encryptionType?: string,
-  title?: string,
-  url?: string,
-  firstName?: string,
-  middleName?: string,
-  lastName?: string,
-  gender?: string,
-  addressCity?: string,
-  addressState?: string,
-  addressStreet?: string,
-  addressZip?: string,
-  birthDate?: string,
-  documentType?: string,
-  licenseNumber?: string,
-  expiryDate?: string,
-  issuingDate?: string,
-  issuingCountry?: string,
-  eventDescription?: string,
-  location?: string,
-  organizer?: string,
-  status?: string,
-  summary?: string,
-  start?: string,
-  end?: string,
-  email?: Email,
-  phoneNumber?: string,
-  message?: string,
-};
+// type TrackedBarcodeFeature = {
+//   bounds: {
+//     size: {
+//       width: number,
+//       height: number,
+//     },
+//     origin: {
+//       x: number,
+//       y: number,
+//     },
+//   },
+//   data: string,
+//   dataRaw: string,
+//   type: BarcodeType,
+//   format?: string,
+//   addresses?: {
+//     addressesType?: 'UNKNOWN' | 'Work' | 'Home',
+//     addressLines?,
+//   }[],
+//   emails?: Email[],
+//   phones?: Phone[],
+//   urls: ?(string[]),
+//   name?: {
+//     firstName?: string,
+//     lastName?: string,
+//     middleName?: string,
+//     prefix?: string,
+//     pronounciation?: string,
+//     suffix?: string,
+//     formattedName?: string,
+//   },
+//   phone?: Phone,
+//   organization?: string,
+//   latitude?: number,
+//   longitude?: number,
+//   ssid?: string,
+//   password?: string,
+//   encryptionType?: string,
+//   title?: string,
+//   url?: string,
+//   firstName?: string,
+//   middleName?: string,
+//   lastName?: string,
+//   gender?: string,
+//   addressCity?: string,
+//   addressState?: string,
+//   addressStreet?: string,
+//   addressZip?: string,
+//   birthDate?: string,
+//   documentType?: string,
+//   licenseNumber?: string,
+//   expiryDate?: string,
+//   issuingDate?: string,
+//   issuingCountry?: string,
+//   eventDescription?: string,
+//   location?: string,
+//   organizer?: string,
+//   status?: string,
+//   summary?: string,
+//   start?: string,
+//   end?: string,
+//   email?: Email,
+//   phoneNumber?: string,
+//   message?: string,
+// };
 
-type BarcodeType =
-  | 'EMAIL'
-  | 'PHONE'
-  | 'CALENDAR_EVENT'
-  | 'DRIVER_LICENSE'
-  | 'GEO'
-  | 'SMS'
-  | 'CONTACT_INFO'
-  | 'WIFI'
-  | 'TEXT'
-  | 'ISBN'
-  | 'PRODUCT'
-  | 'URL';
+// type BarcodeType =
+//   | 'EMAIL'
+//   | 'PHONE'
+//   | 'CALENDAR_EVENT'
+//   | 'DRIVER_LICENSE'
+//   | 'GEO'
+//   | 'SMS'
+//   | 'CONTACT_INFO'
+//   | 'WIFI'
+//   | 'TEXT'
+//   | 'ISBN'
+//   | 'PRODUCT'
+//   | 'URL';
 
-type Email = {
-  address?: string,
-  body?: string,
-  subject?: string,
-  emailType?: 'UNKNOWN' | 'Work' | 'Home',
-};
+// type Email = {
+//   address?: string,
+//   body?: string,
+//   subject?: string,
+//   emailType?: 'UNKNOWN' | 'Work' | 'Home',
+// };
 
-type Phone = {
-  number?: string,
-  phoneType?: 'UNKNOWN' | 'Work' | 'Home' | 'Fax' | 'Mobile',
-};
+// type Phone = {
+//   number?: string,
+//   phoneType?: 'UNKNOWN' | 'Work' | 'Home' | 'Fax' | 'Mobile',
+// };
 
-type RecordingOptions = {
-  maxDuration?: number,
-  maxFileSize?: number,
-  orientation?: Orientation,
-  quality?: number | string,
-  fps?: number,
-  codec?: string,
-  mute?: boolean,
-  path?: string,
-  videoBitrate?: number,
-};
+// type RecordingOptions = {
+//   maxDuration?: number,
+//   maxFileSize?: number,
+//   orientation?: Orientation,
+//   quality?: number | string,
+//   fps?: number,
+//   codec?: string,
+//   mute?: boolean,
+//   path?: string,
+//   videoBitrate?: number,
+// };
 
-type EventCallbackArgumentsType = {
-  nativeEvent: Object,
-};
+// type EventCallbackArgumentsType = {
+//   nativeEvent: Object,
+// };
 
-type Rect = {
-  x: number,
-  y: number,
-  width: number,
-  height: number,
-};
+// type Rect = {
+//   x: number,
+//   y: number,
+//   width: number,
+//   height: number,
+// };
 
-type PropsType = typeof View.props & {
-  zoom?: number,
-  useNativeZoom?: boolean,
-  maxZoom?: number,
-  ratio?: string,
-  focusDepth?: number,
-  type?: number | string,
-  onCameraReady?: Function,
-  onAudioInterrupted?: Function,
-  onAudioConnected?: Function,
-  onStatusChange?: Function,
-  onBarCodeRead?: Function,
-  onPictureTaken?: Function,
-  onPictureSaved?: Function,
-  onRecordingStart?: Function,
-  onRecordingEnd?: Function,
-  onTap?: Function,
-  onDoubleTap?: Function,
-  onGoogleVisionBarcodesDetected?: ({ barcodes: Array<TrackedBarcodeFeature> }) => void,
-  onSubjectAreaChanged?: ({ nativeEvent: { prevPoint: {| x: number, y: number |} } }) => void,
-  faceDetectionMode?: number,
-  trackingEnabled?: boolean,
-  flashMode?: number | string,
-  exposure?: number,
-  barCodeTypes?: Array<string>,
-  googleVisionBarcodeType?: number,
-  googleVisionBarcodeMode?: number,
-  whiteBalance?:
-    | number
-    | string
-    | {
-        temperature: number,
-        tint: number,
-        redGainOffset?: number,
-        greenGainOffset?: number,
-        blueGainOffset?: number,
-      },
-  faceDetectionLandmarks?: number,
-  autoFocus?: string | boolean | number,
-  autoFocusPointOfInterest?: { x: number, y: number },
-  faceDetectionClassifications?: number,
-  onFacesDetected?: ({ faces: Array<TrackedFaceFeature> }) => void,
-  onTextRecognized?: ({ textBlocks: Array<TrackedTextFeature> }) => void,
-  captureAudio?: boolean,
-  keepAudioSession?: boolean,
-  useCamera2Api?: boolean,
-  playSoundOnCapture?: boolean,
-  playSoundOnRecord?: boolean,
-  videoStabilizationMode?: number | string,
-  pictureSize?: string,
-  rectOfInterest: Rect,
-};
+// type PropsType = typeof View.props & {
+//   zoom?: number,
+//   useNativeZoom?: boolean,
+//   maxZoom?: number,
+//   ratio?: string,
+//   focusDepth?: number,
+//   type?: number | string,
+//   onCameraReady?: Function,
+//   onAudioInterrupted?: Function,
+//   onAudioConnected?: Function,
+//   onStatusChange?: Function,
+//   onBarCodeRead?: Function,
+//   onPictureTaken?: Function,
+//   onPictureSaved?: Function,
+//   onRecordingStart?: Function,
+//   onRecordingEnd?: Function,
+//   onTap?: Function,
+//   onDoubleTap?: Function,
+//   onGoogleVisionBarcodesDetected?: ({ barcodes: Array<TrackedBarcodeFeature> }) => void,
+//   onSubjectAreaChanged?: ({ nativeEvent: { prevPoint: {| x: number, y: number |} } }) => void,
+//   faceDetectionMode?: number,
+//   trackingEnabled?: boolean,
+//   flashMode?: number | string,
+//   exposure?: number,
+//   barCodeTypes?: Array<string>,
+//   googleVisionBarcodeType?: number,
+//   googleVisionBarcodeMode?: number,
+//   whiteBalance?:
+//     | number
+//     | string
+//     | {
+//         temperature: number,
+//         tint: number,
+//         redGainOffset?: number,
+//         greenGainOffset?: number,
+//         blueGainOffset?: number,
+//       },
+//   faceDetectionLandmarks?: number,
+//   autoFocus?: string | boolean | number,
+//   autoFocusPointOfInterest?: { x: number, y: number },
+//   faceDetectionClassifications?: number,
+//   onFacesDetected?: ({ faces: Array<TrackedFaceFeature> }) => void,
+//   onTextRecognized?: ({ textBlocks: Array<TrackedTextFeature> }) => void,
+//   captureAudio?: boolean,
+//   keepAudioSession?: boolean,
+//   useCamera2Api?: boolean,
+//   playSoundOnCapture?: boolean,
+//   playSoundOnRecord?: boolean,
+//   videoStabilizationMode?: number | string,
+//   pictureSize?: string,
+//   rectOfInterest: Rect,
+// };
 
-type StateType = {
-  isAuthorized: boolean,
-  isAuthorizationChecked: boolean,
-  recordAudioPermissionStatus: RecordAudioPermissionStatus,
-};
+// type StateType = {
+//   isAuthorized: boolean,
+//   isAuthorizationChecked: boolean,
+//   recordAudioPermissionStatus: RecordAudioPermissionStatus,
+// };
 
-export type Status = 'READY' | 'PENDING_AUTHORIZATION' | 'NOT_AUTHORIZED';
+// export type Status = 'READY' | 'PENDING_AUTHORIZATION' | 'NOT_AUTHORIZED';
 
-const CameraStatus: { [key: Status]: Status } = {
-  READY: 'READY',
-  PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
-  NOT_AUTHORIZED: 'NOT_AUTHORIZED',
-};
+// const CameraStatus: { [key] } = {
+//   READY: 'READY',
+//   PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
+//   NOT_AUTHORIZED: 'NOT_AUTHORIZED',
+// };
 
-export type RecordAudioPermissionStatus = 'AUTHORIZED' | 'NOT_AUTHORIZED' | 'PENDING_AUTHORIZATION';
+// export type RecordAudioPermissionStatus = 'AUTHORIZED' | 'NOT_AUTHORIZED' | 'PENDING_AUTHORIZATION';
 
-const RecordAudioPermissionStatusEnum: {
-  [key: RecordAudioPermissionStatus]: RecordAudioPermissionStatus,
-} = {
-  AUTHORIZED: 'AUTHORIZED',
-  PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
-  NOT_AUTHORIZED: 'NOT_AUTHORIZED',
-};
+// const RecordAudioPermissionStatusEnum: {
+//   [key: RecordAudioPermissionStatus]: RecordAudioPermissionStatus,
+// } = {
+//   AUTHORIZED: 'AUTHORIZED',
+//   PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
+//   NOT_AUTHORIZED: 'NOT_AUTHORIZED',
+// };
 
-const CameraManager: Object = NativeModules.RNCameraManager ||
+const CameraManager = NativeModules.RNCameraManager ||
   NativeModules.RNCameraModule || {
     stubbed: true,
     Type: {
@@ -361,7 +361,7 @@ const mapValues = (input, mapper) => {
   return result;
 };
 
-export default class Camera extends React.Component<PropsType, StateType> {
+export default class Camera extends React.Component {
   static Constants = {
     Type: CameraManager.Type,
     FlashMode: CameraManager.FlashMode,
@@ -401,72 +401,72 @@ export default class Camera extends React.Component<PropsType, StateType> {
     videoStabilizationMode: CameraManager.VideoStabilization || {},
   };
 
-  static propTypes = {
-    ...ViewPropTypes,
-    zoom: PropTypes.number,
-    useNativeZoom: PropTypes.bool,
-    maxZoom: PropTypes.number,
-    ratio: PropTypes.string,
-    focusDepth: PropTypes.number,
-    onMountError: PropTypes.func,
-    onCameraReady: PropTypes.func,
-    onAudioInterrupted: PropTypes.func,
-    onAudioConnected: PropTypes.func,
-    onStatusChange: PropTypes.func,
-    onBarCodeRead: PropTypes.func,
-    onPictureTaken: PropTypes.func,
-    onPictureSaved: PropTypes.func,
-    onRecordingStart: PropTypes.func,
-    onRecordingEnd: PropTypes.func,
-    onTap: PropTypes.func,
-    onDoubleTap: PropTypes.func,
-    onGoogleVisionBarcodesDetected: PropTypes.func,
-    onFacesDetected: PropTypes.func,
-    onTextRecognized: PropTypes.func,
-    onSubjectAreaChanged: PropTypes.func,
-    trackingEnabled: PropTypes.bool,
-    faceDetectionMode: PropTypes.number,
-    faceDetectionLandmarks: PropTypes.number,
-    faceDetectionClassifications: PropTypes.number,
-    barCodeTypes: PropTypes.arrayOf(PropTypes.string),
-    googleVisionBarcodeType: PropTypes.number,
-    googleVisionBarcodeMode: PropTypes.number,
-    type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    cameraId: PropTypes.string,
-    flashMode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    exposure: PropTypes.number,
-    whiteBalance: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.shape({
-        temperature: PropTypes.number,
-        tint: PropTypes.number,
-        redGainOffset: PropTypes.number,
-        greenGainOffset: PropTypes.number,
-        blueGainOffset: PropTypes.number,
-      }),
-    ]),
-    autoFocus: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
-    autoFocusPointOfInterest: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
-    permissionDialogTitle: PropTypes.string,
-    permissionDialogMessage: PropTypes.string,
-    androidCameraPermissionOptions: Rationale,
-    androidRecordAudioPermissionOptions: Rationale,
-    notAuthorizedView: PropTypes.element,
-    pendingAuthorizationView: PropTypes.element,
-    captureAudio: PropTypes.bool,
-    keepAudioSession: PropTypes.bool,
-    useCamera2Api: PropTypes.bool,
-    playSoundOnCapture: PropTypes.bool,
-    playSoundOnRecord: PropTypes.bool,
-    videoStabilizationMode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    pictureSize: PropTypes.string,
-    mirrorVideo: PropTypes.bool,
-    rectOfInterest: PropTypes.any,
-    defaultVideoQuality: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  };
+  // static propTypes = {
+  //   ...ViewPropTypes,
+  //   zoom: PropTypes.number,
+  //   useNativeZoom: PropTypes.bool,
+  //   maxZoom: PropTypes.number,
+  //   ratio: PropTypes.string,
+  //   focusDepth: PropTypes.number,
+  //   onMountError: PropTypes.func,
+  //   onCameraReady: PropTypes.func,
+  //   onAudioInterrupted: PropTypes.func,
+  //   onAudioConnected: PropTypes.func,
+  //   onStatusChange: PropTypes.func,
+  //   onBarCodeRead: PropTypes.func,
+  //   onPictureTaken: PropTypes.func,
+  //   onPictureSaved: PropTypes.func,
+  //   onRecordingStart: PropTypes.func,
+  //   onRecordingEnd: PropTypes.func,
+  //   onTap: PropTypes.func,
+  //   onDoubleTap: PropTypes.func,
+  //   onGoogleVisionBarcodesDetected: PropTypes.func,
+  //   onFacesDetected: PropTypes.func,
+  //   onTextRecognized: PropTypes.func,
+  //   onSubjectAreaChanged: PropTypes.func,
+  //   trackingEnabled: PropTypes.bool,
+  //   faceDetectionMode: PropTypes.number,
+  //   faceDetectionLandmarks: PropTypes.number,
+  //   faceDetectionClassifications: PropTypes.number,
+  //   barCodeTypes: PropTypes.arrayOf(PropTypes.string),
+  //   googleVisionBarcodeType: PropTypes.number,
+  //   googleVisionBarcodeMode: PropTypes.number,
+  //   type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  //   cameraId: PropTypes.string,
+  //   flashMode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  //   exposure: PropTypes.number,
+  //   whiteBalance: PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.number,
+  //     PropTypes.shape({
+  //       temperature: PropTypes.number,
+  //       tint: PropTypes.number,
+  //       redGainOffset: PropTypes.number,
+  //       greenGainOffset: PropTypes.number,
+  //       blueGainOffset: PropTypes.number,
+  //     }),
+  //   ]),
+  //   autoFocus: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
+  //   autoFocusPointOfInterest: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
+  //   permissionDialogTitle: PropTypes.string,
+  //   permissionDialogMessage: PropTypes.string,
+  //   androidCameraPermissionOptions: Rationale,
+  //   androidRecordAudioPermissionOptions: Rationale,
+  //   notAuthorizedView: PropTypes.element,
+  //   pendingAuthorizationView: PropTypes.element,
+  //   captureAudio: PropTypes.bool,
+  //   keepAudioSession: PropTypes.bool,
+  //   useCamera2Api: PropTypes.bool,
+  //   playSoundOnCapture: PropTypes.bool,
+  //   playSoundOnRecord: PropTypes.bool,
+  //   videoStabilizationMode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  //   pictureSize: PropTypes.string,
+  //   mirrorVideo: PropTypes.bool,
+  //   rectOfInterest: PropTypes.any,
+  //   defaultVideoQuality: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  // };
 
-  static defaultProps: Object = {
+  static defaultProps = {
     zoom: 0,
     useNativeZoom: false,
     maxZoom: 0,
@@ -510,13 +510,13 @@ export default class Camera extends React.Component<PropsType, StateType> {
     mirrorVideo: false,
   };
 
-  _cameraRef: ?Object;
-  _cameraHandle: ?number;
-  _lastEvents: { [string]: string };
-  _lastEventsTimes: { [string]: Date };
-  _isMounted: boolean;
+  _cameraRef;
+  _cameraHandle;
+  _lastEvents;
+  _lastEventsTimes;
+  _isMounted;
 
-  constructor(props: PropsType) {
+  constructor(props) {
     super(props);
     this._lastEvents = {};
     this._lastEventsTimes = {};
@@ -528,7 +528,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     };
   }
 
-  async takePictureAsync(options?: PictureOptions) {
+  async takePictureAsync(options) {
     if (!options) {
       options = {};
     }
@@ -584,7 +584,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   }
 
-  getSupportedPreviewFpsRange = async (): Promise<[]> => {
+  getSupportedPreviewFpsRange = async () => {
     if (Platform.OS === 'android') {
       return await CameraManager.getSupportedPreviewFpsRange(this._cameraHandle);
     } else {
@@ -592,12 +592,12 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   };
 
-  getAvailablePictureSizes = async (): string[] => {
+  getAvailablePictureSizes = async () => {
     //$FlowFixMe
     return await CameraManager.getAvailablePictureSizes(this.props.ratio, this._cameraHandle);
   };
 
-  async recordAsync(options?: RecordingOptions) {
+  async recordAsync(options) {
     if (!options || typeof options !== 'object') {
       options = {};
     } else if (typeof options.quality === 'string') {
@@ -670,7 +670,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     CameraManager.resumePreview(this._cameraHandle);
   }
 
-  _onMountError = ({ nativeEvent }: EventCallbackArgumentsType) => {
+  _onMountError = ({ nativeEvent }) => {
     if (this.props.onMountError) {
       this.props.onMountError(nativeEvent);
     }
@@ -687,7 +687,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
       this.props.onAudioInterrupted();
     }
   };
-  _onTouch = ({ nativeEvent }: EventCallbackArgumentsType) => {
+  _onTouch = ({ nativeEvent }) => {
     if (this.props.onTap && !nativeEvent.isDoubleTap) {
       this.props.onTap(nativeEvent.touchOrigin);
     }
@@ -710,13 +710,13 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   };
 
-  _onPictureSaved = ({ nativeEvent }: EventCallbackArgumentsType) => {
+  _onPictureSaved = ({ nativeEvent }) => {
     if (this.props.onPictureSaved) {
       this.props.onPictureSaved(nativeEvent);
     }
   };
 
-  _onObjectDetected = (callback: ?Function) => ({ nativeEvent }: EventCallbackArgumentsType) => {
+  _onObjectDetected = (callback) => ({ nativeEvent }) => {
     const { type } = nativeEvent;
     if (
       this._lastEvents[type] &&
@@ -740,7 +740,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   };
 
-  _setReference = (ref: ?Object) => {
+  _setReference = (ref) => {
     if (ref) {
       this._cameraRef = ref;
       this._cameraHandle = findNodeHandle(ref);
@@ -829,7 +829,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     );
   }
 
-  getStatus = (): Status => {
+  getStatus = () => {
     const { isAuthorized, isAuthorizationChecked } = this.state;
     if (isAuthorizationChecked === false) {
       return CameraStatus.PENDING_AUTHORIZATION;
@@ -838,9 +838,9 @@ export default class Camera extends React.Component<PropsType, StateType> {
   };
 
   // FaCC = Function as Child Component;
-  hasFaCC = (): * => typeof this.props.children === 'function';
+  hasFaCC = () => typeof this.props.children === 'function';
 
-  renderChildren = (): * => {
+  renderChildren = () => {
     if (this.hasFaCC()) {
       return this.props.children({
         camera: this,
@@ -885,7 +885,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     }
   }
 
-  _convertNativeProps({ children, ...props }: PropsType) {
+  _convertNativeProps({ children, ...props }) {
     const newProps = mapValues(props, this._convertProp);
 
     if (props.onBarCodeRead) {
@@ -915,7 +915,7 @@ export default class Camera extends React.Component<PropsType, StateType> {
     return newProps;
   }
 
-  _convertProp(value: *, key: string): * {
+  _convertProp(value, key) {
     if (typeof value === 'string' && Camera.ConversionTables[key]) {
       return Camera.ConversionTables[key][value];
     }
