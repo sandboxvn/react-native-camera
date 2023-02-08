@@ -313,13 +313,11 @@ const CameraStatus = {
 
 // export type RecordAudioPermissionStatus = 'AUTHORIZED' | 'NOT_AUTHORIZED' | 'PENDING_AUTHORIZATION';
 
-// const RecordAudioPermissionStatusEnum: {
-//   [key: RecordAudioPermissionStatus]: RecordAudioPermissionStatus,
-// } = {
-//   AUTHORIZED: 'AUTHORIZED',
-//   PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
-//   NOT_AUTHORIZED: 'NOT_AUTHORIZED',
-// };
+const RecordAudioPermissionStatusEnum = {
+  AUTHORIZED: 'AUTHORIZED',
+  PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
+  NOT_AUTHORIZED: 'NOT_AUTHORIZED',
+};
 
 const CameraManager = NativeModules.RNCameraManager ||
   NativeModules.RNCameraModule || {
