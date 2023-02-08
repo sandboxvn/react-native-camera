@@ -305,11 +305,11 @@ const styles = StyleSheet.create({
 
 // export type Status = 'READY' | 'PENDING_AUTHORIZATION' | 'NOT_AUTHORIZED';
 
-// const CameraStatus: { [key] } = {
-//   READY: 'READY',
-//   PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
-//   NOT_AUTHORIZED: 'NOT_AUTHORIZED',
-// };
+const CameraStatus = {
+  READY: 'READY',
+  PENDING_AUTHORIZATION: 'PENDING_AUTHORIZATION',
+  NOT_AUTHORIZED: 'NOT_AUTHORIZED',
+};
 
 // export type RecordAudioPermissionStatus = 'AUTHORIZED' | 'NOT_AUTHORIZED' | 'PENDING_AUTHORIZATION';
 
