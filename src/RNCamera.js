@@ -1,11 +1,10 @@
 // @flow
 import React from 'react';
-import PropTypes from 'deprecated-react-native-prop-types';
+import PropTypes ,{ViewPropTypes}from 'deprecated-react-native-prop-types';
 import {
   findNodeHandle,
   Platform,
   NativeModules,
-  ViewPropTypes,
   requireNativeComponent,
   View,
   ActivityIndicator,
